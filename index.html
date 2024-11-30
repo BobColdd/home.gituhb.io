@@ -2,56 +2,45 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>WiFi Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I Love You</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background: linear-gradient(to right, #6a11cb, #2575fc);
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            margin: 0;
-            color: white;
+            background-color: #f0e4d7;
+            font-family: 'Arial', sans-serif;
         }
-        .login-container {
-            background: rgba(255, 255, 255, 0.9);
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            width: 400px;
+        .message {
             text-align: center;
+            font-size: 2em;
+            color: #ff6f61;
         }
-        .login-container h2 {
-            margin-bottom: 20px;
-            color: #333;
+        .heart {
+            color: red;
+            animation: heartbeat 1.5s infinite;
         }
-        .login-container input {
-            width: 80%;
-            padding: 10px;
-            margin: 10px 0;
-            border: none;
-            border-radius: 5px;
-        }
-        .login-container button {
-            background-color: #2575fc;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
+        @keyframes heartbeat {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2);
+            }
         }
     </style>
 </head>
 <body>
-    <div class="login-container">
-        <h2>WiFi Login</h2>
-        <form method="POST">
-            {% csrf_token %}
-            <input type="text" name="ssid" placeholder="Enter SSID" required>
-            <input type="password" name="password" placeholder="Enter Password" required>
-            <button type="submit">Login</button>
-        </form>
+    <div class="message">
+        <p>I <span class="heart">❤️</span> You!</p>
     </div>
+    <script>
+        // JavaScript to make it interactive
+        document.querySelector('.heart').addEventListener('click', function() {
+            alert('I love you more than words can say!');
+        });
+    </script>
 </body>
 </html>
